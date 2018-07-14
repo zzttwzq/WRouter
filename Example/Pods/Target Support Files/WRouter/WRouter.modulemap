@@ -1,0 +1,6 @@
+framework module WRouter {
+  umbrella header "WRouter-umbrella.h"
+
+  export *
+  module * { export * }
+}
