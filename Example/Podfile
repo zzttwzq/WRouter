@@ -1,0 +1,6 @@
+use_frameworks!
+target 'WRouter_Tests' do
+  pod 'WRouter', :path => '../'
+  
+  
+end
