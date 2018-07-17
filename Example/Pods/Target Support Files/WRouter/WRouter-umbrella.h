@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "WRouter.h"
+#import "WRouterEntry.h"
 
 FOUNDATION_EXPORT double WRouterVersionNumber;
 FOUNDATION_EXPORT const unsigned char WRouterVersionString[];
