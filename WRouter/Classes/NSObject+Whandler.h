@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MicroDefinetion.h"
 
 @interface NSObject (Whandler)
 
@@ -67,5 +66,8 @@
  @param dict 要设置的字典
  */
 - (void) safeSetWithDict:(NSDictionary *)dict;
+
+
++ (void) DEBUGLog:(NSString *)message;
 
 @end

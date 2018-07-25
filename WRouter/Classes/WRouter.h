@@ -5,11 +5,8 @@
 //  Created by 吴志强 on 2018/3/13.
 //
 
-#import <WBasicLibrary/WBasicHeader.h>
-#import <WExpandLibrary/WPlistManager.h>
-#import <WExpandLibrary/WNetwork.h>
 #import "WRouterEntry.h"
-
+#import "NSObject+Whandler.h"
 
 typedef void (^DictionaryBlock)(NSDictionary * _Nullable responseDict);
 
@@ -28,9 +25,6 @@ typedef void (^DictionaryBlock)(NSDictionary * _Nullable responseDict);
  host列表
  */
 @property (nonatomic,strong) NSMutableArray *urlHosts;
-
-
-
 
 
 

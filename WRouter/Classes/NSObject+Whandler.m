@@ -227,23 +227,21 @@
             }
             else{
 
-                [self showInfo:[NSString stringWithFormat:@"没有这个key:%@",key]];
+                [self DEBUGLog:[NSString stringWithFormat:@"找不到key：%@",key]];
             }
         }
-    }else{
+    }
+    else{
 
-        [self showInfo:@"请传入字典！"];
+        [self DEBUGLog:@"请传入字典！"];
     }
 }
 
 
-/**
- 显示消息
-
- @param string 要显示的消息
- */
-- (void) showInfo:(NSString *)string
++ (void) DEBUGLog:(NSString *)message;
 {
-    WLOG(@"<!警告!> <NSObject (Whandler)> \n%@",string);
+    #ifdef DEBUG
+        NSLog(@"<WRouter> %@",message);
+    #endif
 }
 @end

@@ -106,7 +106,7 @@
         return [self validateUrlScheme:entry.className];
     }
 
-    return nil;
+    return entry;
 }
 
 
@@ -117,13 +117,13 @@
  */
 + (void) getRouterInfoFromLocalFile:(NSString *)fileName;
 {
-    WPlistManager *plist = [WPlistManager plistWithName:fileName];
-
-    NSDictionary *dict = [plist getDict];
-    for (NSString *key in dict) {
-        
-        [[WRouter globalRouters] addGlobalRouterWithUrlScheme:dict[key] handler:nil];
-    }
+//    WPlistManager *plist = [WPlistManager plistWithName:fileName];
+//
+//    NSDictionary *dict = [plist getDict];
+//    for (NSString *key in dict) {
+//        
+//        [[WRouter globalRouters] addGlobalRouterWithUrlScheme:dict[key] handler:nil];
+//    }
 }
 
 
@@ -136,17 +136,17 @@
 + (void) getRouterInfoFromURLString:(NSString *)urlString
                            fileName:(NSString *)fileName;
 {
-    [WNetwork getTaskWithURL:urlString
-                      params:nil
-          setHttpHeaderfield:nil
-                     success:^(NSDictionary *respone) {
-
-                         if ([respone[@"result"] integerValue] == 1) {
-
-                             [[WRouter globalRouters].routerInfoDict addEntriesFromDictionary:respone[@"data"]];
-                         }
-                     } faild:^(NSError *error) {
-                     }];
+//    [WNetwork getTaskWithURL:urlString
+//                      params:nil
+//          setHttpHeaderfield:nil
+//                     success:^(NSDictionary *respone) {
+//
+//                         if ([respone[@"result"] integerValue] == 1) {
+//
+//                             [[WRouter globalRouters].routerInfoDict addEntriesFromDictionary:respone[@"data"]];
+//                         }
+//                     } faild:^(NSError *error) {
+//                     }];
 }
 
 
@@ -296,9 +296,7 @@
 + (void) showInfo:(NSString *)string
 {
     #ifdef DEBUG
-
         NSLog(@"%@",string);
-
     #endif
 }
 

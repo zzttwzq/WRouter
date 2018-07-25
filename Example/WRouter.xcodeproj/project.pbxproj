@@ -10,6 +10,7 @@
 		13FFCB82C6E700F1CC7DA0EF /* Pods_WRouter_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DF17B6F4423FCD89DBB104 /* Pods_WRouter_Example.framework */; };
 		1C7FA1F420FDF5CE006AF107 /* WBasicLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7FA1F320FDF5CE006AF107 /* WBasicLibrary.framework */; };
 		1C7FA1F620FDF5CE006AF107 /* WExpandLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7FA1F520FDF5CE006AF107 /* WExpandLibrary.framework */; };
+		1CCBEBAC21080B1B007D75F7 /* Wtest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBEBAB21080B1B007D75F7 /* Wtest.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -54,6 +55,8 @@
 		1A8270D7C4E83B076E2E676B /* Pods_WRouter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WRouter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7FA1F320FDF5CE006AF107 /* WBasicLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WBasicLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7FA1F520FDF5CE006AF107 /* WExpandLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WExpandLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CCBEBAA21080B1B007D75F7 /* Wtest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wtest.h; sourceTree = "<group>"; };
+		1CCBEBAB21080B1B007D75F7 /* Wtest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wtest.m; sourceTree = "<group>"; };
 		2A445C1A301718F4FEE13781 /* Pods-WRouter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRouter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WRouter_Example/Pods-WRouter_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* WRouter_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WRouter_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +160,8 @@
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				1CCBEBAA21080B1B007D75F7 /* Wtest.h */,
+				1CCBEBAB21080B1B007D75F7 /* Wtest.m */,
 			);
 			name = "Example for WRouter";
 			path = WRouter;
@@ -334,16 +339,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WRouter_Example/Pods-WRouter_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/WBasicLibrary/WBasicLibrary.framework",
-				"${BUILT_PRODUCTS_DIR}/WExpandLibrary/WExpandLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/WRouter/WRouter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WBasicLibrary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WExpandLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WRouter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* WAppDelegate.m in Sources */,
+				1CCBEBAC21080B1B007D75F7 /* Wtest.m in Sources */,
 				6003F5A7195388D20070C39A /* WViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
