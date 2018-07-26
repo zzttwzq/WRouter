@@ -1,5 +1,5 @@
 PODS:
-  - WRouter (0.1.1)
+  - WRouter (0.1.2)
 
 DEPENDENCIES:
   - WRouter (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  WRouter: dbdb0d9879424504cd3d5f9bed54cf7dd230ad29
+  WRouter: 8f69059d318aac78927e8e5c7ba5739a54e8fcfe
 
 PODFILE CHECKSUM: f33eabb2653892f8f53420cb0e5a3c08b5838da7
 

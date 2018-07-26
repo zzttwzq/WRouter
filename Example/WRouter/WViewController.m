@@ -8,7 +8,6 @@
 
 #import "WViewController.h"
 #import "Wtest.h"
-#import <WRouter/wr>
 
 @interface WViewController ()
 
