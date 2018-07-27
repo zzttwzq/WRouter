@@ -8,6 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		1A5263168D4AB7B5D775C2ADC81A2639 /* WRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6499DD145F46937E8DDB8A14FDC48A0A /* WRouter-dummy.m */; };
+		1C73E2B7210B00F300C01D7F /* WFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2AB210B00F200C01D7F /* WFileManager.m */; };
+		1C73E2B8210B00F300C01D7F /* WFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2AB210B00F200C01D7F /* WFileManager.m */; };
+		1C73E2B9210B00F300C01D7F /* WRouterLocalSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2AC210B00F200C01D7F /* WRouterLocalSession.m */; };
+		1C73E2BA210B00F300C01D7F /* WRouterLocalSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2AC210B00F200C01D7F /* WRouterLocalSession.m */; };
+		1C73E2BB210B00F300C01D7F /* WRouterURLDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2AD210B00F200C01D7F /* WRouterURLDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2BC210B00F300C01D7F /* WRouterURLDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2AD210B00F200C01D7F /* WRouterURLDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2BD210B00F300C01D7F /* WRouterLocalSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2AE210B00F300C01D7F /* WRouterLocalSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2BE210B00F300C01D7F /* WRouterLocalSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2AE210B00F300C01D7F /* WRouterLocalSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2BF210B00F300C01D7F /* WFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2AF210B00F300C01D7F /* WFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2C0210B00F300C01D7F /* WFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2AF210B00F300C01D7F /* WFileManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2C1210B00F300C01D7F /* NSObject+Whandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2B0210B00F300C01D7F /* NSObject+Whandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2C2210B00F300C01D7F /* NSObject+Whandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2B0210B00F300C01D7F /* NSObject+Whandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2C3210B00F300C01D7F /* WRouterEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2B1210B00F300C01D7F /* WRouterEntry.m */; };
+		1C73E2C4210B00F300C01D7F /* WRouterEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2B1210B00F300C01D7F /* WRouterEntry.m */; };
+		1C73E2C5210B00F300C01D7F /* WRouterURLDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2B2210B00F300C01D7F /* WRouterURLDecoder.m */; };
+		1C73E2C6210B00F300C01D7F /* WRouterURLDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2B2210B00F300C01D7F /* WRouterURLDecoder.m */; };
+		1C73E2C7210B00F300C01D7F /* WRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2B3210B00F300C01D7F /* WRouter.m */; };
+		1C73E2C8210B00F300C01D7F /* WRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2B3210B00F300C01D7F /* WRouter.m */; };
+		1C73E2C9210B00F300C01D7F /* WRouterEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2B4210B00F300C01D7F /* WRouterEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2CA210B00F300C01D7F /* WRouterEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2B4210B00F300C01D7F /* WRouterEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2CB210B00F300C01D7F /* WRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2B5210B00F300C01D7F /* WRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2CC210B00F300C01D7F /* WRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C73E2B5210B00F300C01D7F /* WRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C73E2CD210B00F300C01D7F /* NSObject+Whandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2B6210B00F300C01D7F /* NSObject+Whandler.m */; };
+		1C73E2CE210B00F300C01D7F /* NSObject+Whandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2B6210B00F300C01D7F /* NSObject+Whandler.m */; };
 		7B875A542F36F5ABDF3AD6AD894F0997 /* Pods-WRouter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A38AD35DD696221B727479257400D256 /* Pods-WRouter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F73C88C5A15D19B8C0F9C13F5A04654 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		B5504A52A8C5A93C9AB7CBA8166CC7C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
@@ -27,6 +51,18 @@
 
 /* Begin PBXFileReference section */
 		1845C7A3BD2118F45C844DD8C17212BE /* Pods-WRouter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WRouter_Example-dummy.m"; sourceTree = "<group>"; };
+		1C73E2AB210B00F200C01D7F /* WFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WFileManager.m; path = WRouter/Classes/WFileManager.m; sourceTree = "<group>"; };
+		1C73E2AC210B00F200C01D7F /* WRouterLocalSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRouterLocalSession.m; path = WRouter/Classes/WRouterLocalSession.m; sourceTree = "<group>"; };
+		1C73E2AD210B00F200C01D7F /* WRouterURLDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRouterURLDecoder.h; path = WRouter/Classes/WRouterURLDecoder.h; sourceTree = "<group>"; };
+		1C73E2AE210B00F300C01D7F /* WRouterLocalSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRouterLocalSession.h; path = WRouter/Classes/WRouterLocalSession.h; sourceTree = "<group>"; };
+		1C73E2AF210B00F300C01D7F /* WFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WFileManager.h; path = WRouter/Classes/WFileManager.h; sourceTree = "<group>"; };
+		1C73E2B0210B00F300C01D7F /* NSObject+Whandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Whandler.h"; path = "WRouter/Classes/NSObject+Whandler.h"; sourceTree = "<group>"; };
+		1C73E2B1210B00F300C01D7F /* WRouterEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRouterEntry.m; path = WRouter/Classes/WRouterEntry.m; sourceTree = "<group>"; };
+		1C73E2B2210B00F300C01D7F /* WRouterURLDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRouterURLDecoder.m; path = WRouter/Classes/WRouterURLDecoder.m; sourceTree = "<group>"; };
+		1C73E2B3210B00F300C01D7F /* WRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRouter.m; path = WRouter/Classes/WRouter.m; sourceTree = "<group>"; };
+		1C73E2B4210B00F300C01D7F /* WRouterEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRouterEntry.h; path = WRouter/Classes/WRouterEntry.h; sourceTree = "<group>"; };
+		1C73E2B5210B00F300C01D7F /* WRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRouter.h; path = WRouter/Classes/WRouter.h; sourceTree = "<group>"; };
+		1C73E2B6210B00F300C01D7F /* NSObject+Whandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Whandler.m"; path = "WRouter/Classes/NSObject+Whandler.m"; sourceTree = "<group>"; };
 		395ED1661362272B4F590FBD68D97D27 /* WRouter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = WRouter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4D7D502481EA5913F0AE0B1FFA88A719 /* WRouter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WRouter.modulemap; sourceTree = "<group>"; };
 		4FBCBF087F216DC5B4135896654FE600 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -129,6 +165,18 @@
 		8CB974A0214DD8ECA19A80A0C3C32521 /* WRouter */ = {
 			isa = PBXGroup;
 			children = (
+				1C73E2B0210B00F300C01D7F /* NSObject+Whandler.h */,
+				1C73E2B6210B00F300C01D7F /* NSObject+Whandler.m */,
+				1C73E2AF210B00F300C01D7F /* WFileManager.h */,
+				1C73E2AB210B00F200C01D7F /* WFileManager.m */,
+				1C73E2B5210B00F300C01D7F /* WRouter.h */,
+				1C73E2B3210B00F300C01D7F /* WRouter.m */,
+				1C73E2B4210B00F300C01D7F /* WRouterEntry.h */,
+				1C73E2B1210B00F300C01D7F /* WRouterEntry.m */,
+				1C73E2AE210B00F300C01D7F /* WRouterLocalSession.h */,
+				1C73E2AC210B00F200C01D7F /* WRouterLocalSession.m */,
+				1C73E2AD210B00F200C01D7F /* WRouterURLDecoder.h */,
+				1C73E2B2210B00F300C01D7F /* WRouterURLDecoder.m */,
 				5DD224E6FF8F90D373F24CAD75AF3D63 /* Pod */,
 				F53046B3CB1F3A486E369DBD951A193B /* Support Files */,
 			);
@@ -182,7 +230,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C73E2CB210B00F300C01D7F /* WRouter.h in Headers */,
+				1C73E2BB210B00F300C01D7F /* WRouterURLDecoder.h in Headers */,
+				1C73E2C1210B00F300C01D7F /* NSObject+Whandler.h in Headers */,
 				7B875A542F36F5ABDF3AD6AD894F0997 /* Pods-WRouter_Example-umbrella.h in Headers */,
+				1C73E2BF210B00F300C01D7F /* WFileManager.h in Headers */,
+				1C73E2C9210B00F300C01D7F /* WRouterEntry.h in Headers */,
+				1C73E2BD210B00F300C01D7F /* WRouterLocalSession.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +244,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C73E2CC210B00F300C01D7F /* WRouter.h in Headers */,
+				1C73E2BC210B00F300C01D7F /* WRouterURLDecoder.h in Headers */,
+				1C73E2C2210B00F300C01D7F /* NSObject+Whandler.h in Headers */,
 				D917FE95AEF654843D3E9FAFEAA0EC05 /* WRouter-umbrella.h in Headers */,
+				1C73E2C0210B00F300C01D7F /* WFileManager.h in Headers */,
+				1C73E2CA210B00F300C01D7F /* WRouterEntry.h in Headers */,
+				1C73E2BE210B00F300C01D7F /* WRouterLocalSession.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C73E2C8210B00F300C01D7F /* WRouter.m in Sources */,
+				1C73E2C6210B00F300C01D7F /* WRouterURLDecoder.m in Sources */,
 				1A5263168D4AB7B5D775C2ADC81A2639 /* WRouter-dummy.m in Sources */,
+				1C73E2B8210B00F300C01D7F /* WFileManager.m in Sources */,
+				1C73E2BA210B00F300C01D7F /* WRouterLocalSession.m in Sources */,
+				1C73E2C4210B00F300C01D7F /* WRouterEntry.m in Sources */,
+				1C73E2CE210B00F300C01D7F /* NSObject+Whandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +338,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C73E2C7210B00F300C01D7F /* WRouter.m in Sources */,
+				1C73E2C5210B00F300C01D7F /* WRouterURLDecoder.m in Sources */,
 				DEB59B4BF10E2409105D740ADC77FE9D /* Pods-WRouter_Example-dummy.m in Sources */,
+				1C73E2B7210B00F300C01D7F /* WFileManager.m in Sources */,
+				1C73E2B9210B00F300C01D7F /* WRouterLocalSession.m in Sources */,
+				1C73E2C3210B00F300C01D7F /* WRouterEntry.m in Sources */,
+				1C73E2CD210B00F300C01D7F /* NSObject+Whandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
