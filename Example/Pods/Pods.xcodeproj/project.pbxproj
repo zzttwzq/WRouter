@@ -8,17 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1A5263168D4AB7B5D775C2ADC81A2639 /* WRouter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6499DD145F46937E8DDB8A14FDC48A0A /* WRouter-dummy.m */; };
-		23697AD5E2CBE5C7C9A9209301032022 /* WRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBC67F828B0652A17CFC16DB641E64D /* WRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76993204A4869DDB20C4003C4A106EAD /* NSObject+Whandler.h in Headers */ = {isa = PBXBuildFile; fileRef = C26DC4E6281127787442D1A0E03603D6 /* NSObject+Whandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B875A542F36F5ABDF3AD6AD894F0997 /* Pods-WRouter_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A38AD35DD696221B727479257400D256 /* Pods-WRouter_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F73C88C5A15D19B8C0F9C13F5A04654 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		B5504A52A8C5A93C9AB7CBA8166CC7C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		CD0E009D7253AC8230453B67D34659D2 /* NSObject+Whandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 621F816A157817BA4DBA4E01B117B030 /* NSObject+Whandler.m */; };
 		D917FE95AEF654843D3E9FAFEAA0EC05 /* WRouter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA2BE7FC1BB0F57D9FE8E7AC609A676A /* WRouter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC9E43800694AA1480C763E71E3BDC1D /* WRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C1E41BD0D21A212E8C03FD6B997A5A /* WRouter.m */; };
 		DEB59B4BF10E2409105D740ADC77FE9D /* Pods-WRouter_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845C7A3BD2118F45C844DD8C17212BE /* Pods-WRouter_Example-dummy.m */; };
-		DF2B83003BC2C9D6320CEEBEE4D6BF32 /* WRouterEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DA93178DA74D876F0C51460B152B372 /* WRouterEntry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FDAF32A6E9D13E96BC9564274BE3692B /* WRouterEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F214AA08035FB6509125E98A1359FA /* WRouterEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,14 +27,11 @@
 
 /* Begin PBXFileReference section */
 		1845C7A3BD2118F45C844DD8C17212BE /* Pods-WRouter_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WRouter_Example-dummy.m"; sourceTree = "<group>"; };
-		36C1E41BD0D21A212E8C03FD6B997A5A /* WRouter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WRouter.m; path = WRouter/Classes/WRouter.m; sourceTree = "<group>"; };
 		395ED1661362272B4F590FBD68D97D27 /* WRouter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = WRouter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		3DA93178DA74D876F0C51460B152B372 /* WRouterEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WRouterEntry.h; path = WRouter/Classes/WRouterEntry.h; sourceTree = "<group>"; };
 		4D7D502481EA5913F0AE0B1FFA88A719 /* WRouter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WRouter.modulemap; sourceTree = "<group>"; };
 		4FBCBF087F216DC5B4135896654FE600 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		585C6681AF998D5EB5756737EB3EA71E /* Pods-WRouter_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WRouter_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		621F816A157817BA4DBA4E01B117B030 /* NSObject+Whandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Whandler.m"; path = "WRouter/Classes/NSObject+Whandler.m"; sourceTree = "<group>"; };
 		6499DD145F46937E8DDB8A14FDC48A0A /* WRouter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WRouter-dummy.m"; sourceTree = "<group>"; };
 		7242F5271FF64FF3B95C54670467D9BE /* WRouter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WRouter.xcconfig; sourceTree = "<group>"; };
 		7D5479EA19D493A04516B2E42AA81159 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,13 +44,10 @@
 		B3310042C84D07A06967E1F4EE28AD86 /* Pods-WRouter_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WRouter_Example-resources.sh"; sourceTree = "<group>"; };
 		BC3F7F39DB12A33BC1042755E990E782 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C031077A917D7C7C981F9342EDBDBEAE /* WRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C26DC4E6281127787442D1A0E03603D6 /* NSObject+Whandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Whandler.h"; path = "WRouter/Classes/NSObject+Whandler.h"; sourceTree = "<group>"; };
 		DA2BE7FC1BB0F57D9FE8E7AC609A676A /* WRouter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WRouter-umbrella.h"; sourceTree = "<group>"; };
 		DDBEF814F9E864F16B8059BC22A03B4A /* Pods-WRouter_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WRouter_Example.modulemap"; sourceTree = "<group>"; };
 		DE17986AB4923D5203BBF047594C3ABF /* Pods-WRouter_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WRouter_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		DF11D43C17AB1DB71658417C5BBAB6DC /* WRouter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WRouter-prefix.pch"; sourceTree = "<group>"; };
-		E5F214AA08035FB6509125E98A1359FA /* WRouterEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WRouterEntry.m; path = WRouter/Classes/WRouterEntry.m; sourceTree = "<group>"; };
-		ECBC67F828B0652A17CFC16DB641E64D /* WRouter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WRouter.h; path = WRouter/Classes/WRouter.h; sourceTree = "<group>"; };
 		F9065FC4ACECC595C2EEABB7B7A5E6FE /* Pods-WRouter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WRouter_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,12 +129,6 @@
 		8CB974A0214DD8ECA19A80A0C3C32521 /* WRouter */ = {
 			isa = PBXGroup;
 			children = (
-				ECBC67F828B0652A17CFC16DB641E64D /* WRouter.h */,
-				36C1E41BD0D21A212E8C03FD6B997A5A /* WRouter.m */,
-				3DA93178DA74D876F0C51460B152B372 /* WRouterEntry.h */,
-				E5F214AA08035FB6509125E98A1359FA /* WRouterEntry.m */,
-				C26DC4E6281127787442D1A0E03603D6 /* NSObject+Whandler.h */,
-				621F816A157817BA4DBA4E01B117B030 /* NSObject+Whandler.m */,
 				5DD224E6FF8F90D373F24CAD75AF3D63 /* Pod */,
 				F53046B3CB1F3A486E369DBD951A193B /* Support Files */,
 			);
@@ -208,10 +190,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76993204A4869DDB20C4003C4A106EAD /* NSObject+Whandler.h in Headers */,
 				D917FE95AEF654843D3E9FAFEAA0EC05 /* WRouter-umbrella.h in Headers */,
-				23697AD5E2CBE5C7C9A9209301032022 /* WRouter.h in Headers */,
-				DF2B83003BC2C9D6320CEEBEE4D6BF32 /* WRouterEntry.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,10 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD0E009D7253AC8230453B67D34659D2 /* NSObject+Whandler.m in Sources */,
 				1A5263168D4AB7B5D775C2ADC81A2639 /* WRouter-dummy.m in Sources */,
-				DC9E43800694AA1480C763E71E3BDC1D /* WRouter.m in Sources */,
-				FDAF32A6E9D13E96BC9564274BE3692B /* WRouterEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

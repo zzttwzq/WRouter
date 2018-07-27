@@ -68,6 +68,6 @@
 - (void) safeSetWithDict:(NSDictionary *)dict;
 
 
-+ (void) DEBUGLog:(NSString *)message;
+- (void) DEBUGLog:(NSString *)message;
 
 @end

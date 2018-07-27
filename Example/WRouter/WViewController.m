@@ -7,7 +7,7 @@
 //
 
 #import "WViewController.h"
-#import "Wtest.h"
+
 
 @interface WViewController ()
 
@@ -20,7 +20,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    NSString *url = @"www.baidu.com";
+
+
     
+
 }
 
 - (void)didReceiveMemoryWarning

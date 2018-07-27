@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13FFCB82C6E700F1CC7DA0EF /* Pods_WRouter_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DF17B6F4423FCD89DBB104 /* Pods_WRouter_Example.framework */; };
-		1C7FA1F420FDF5CE006AF107 /* WBasicLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7FA1F320FDF5CE006AF107 /* WBasicLibrary.framework */; };
-		1C7FA1F620FDF5CE006AF107 /* WExpandLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7FA1F520FDF5CE006AF107 /* WExpandLibrary.framework */; };
+		1C73E2A5210AFA7A00C01D7F /* routerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2A4210AFA7A00C01D7F /* routerConfig.m */; };
+		1C73E2A7210AFA9300C01D7F /* routerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C73E2A6210AFA9300C01D7F /* routerInfo.plist */; };
+		1C73E2AA210AFAB500C01D7F /* Wpage1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2A9210AFAB500C01D7F /* Wpage1.m */; };
 		1CCBEBAC21080B1B007D75F7 /* Wtest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCBEBAB21080B1B007D75F7 /* Wtest.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -19,7 +19,6 @@
 		6003F59E195388D20070C39A /* WAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* WAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* WViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* WViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
-		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
@@ -52,9 +51,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1A8270D7C4E83B076E2E676B /* Pods_WRouter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WRouter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C7FA1F320FDF5CE006AF107 /* WBasicLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WBasicLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C7FA1F520FDF5CE006AF107 /* WExpandLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WExpandLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C73E2A3210AFA7A00C01D7F /* routerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = routerConfig.h; sourceTree = "<group>"; };
+		1C73E2A4210AFA7A00C01D7F /* routerConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = routerConfig.m; sourceTree = "<group>"; };
+		1C73E2A6210AFA9300C01D7F /* routerInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = routerInfo.plist; sourceTree = "<group>"; };
+		1C73E2A8210AFAB500C01D7F /* Wpage1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wpage1.h; sourceTree = "<group>"; };
+		1C73E2A9210AFAB500C01D7F /* Wpage1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wpage1.m; sourceTree = "<group>"; };
 		1CCBEBAA21080B1B007D75F7 /* Wtest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wtest.h; sourceTree = "<group>"; };
 		1CCBEBAB21080B1B007D75F7 /* Wtest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wtest.m; sourceTree = "<group>"; };
 		2A445C1A301718F4FEE13781 /* Pods-WRouter_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRouter_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WRouter_Example/Pods-WRouter_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		6003F5A6195388D20070C39A /* WViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* WRouter_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRouter_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
@@ -81,7 +81,6 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		964F01BF90025CC2543EBF60 /* WRouter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WRouter.podspec; path = ../WRouter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9B21553E307951A3F56B3FD9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		A0DF17B6F4423FCD89DBB104 /* Pods_WRouter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WRouter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C51086CF69CA31197FF7D247 /* Pods-WRouter_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WRouter_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WRouter_Example/Pods-WRouter_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D3D79597FC9826FC21465D0B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,12 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7FA1F420FDF5CE006AF107 /* WBasicLibrary.framework in Frameworks */,
-				1C7FA1F620FDF5CE006AF107 /* WExpandLibrary.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				13FFCB82C6E700F1CC7DA0EF /* Pods_WRouter_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
 			);
@@ -137,14 +132,9 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C7FA1F320FDF5CE006AF107 /* WBasicLibrary.framework */,
-				1C7FA1F520FDF5CE006AF107 /* WExpandLibrary.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
-				6003F5AF195388D20070C39A /* XCTest.framework */,
-				A0DF17B6F4423FCD89DBB104 /* Pods_WRouter_Example.framework */,
-				1A8270D7C4E83B076E2E676B /* Pods_WRouter_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,6 +152,11 @@
 				6003F594195388D20070C39A /* Supporting Files */,
 				1CCBEBAA21080B1B007D75F7 /* Wtest.h */,
 				1CCBEBAB21080B1B007D75F7 /* Wtest.m */,
+				1C73E2A3210AFA7A00C01D7F /* routerConfig.h */,
+				1C73E2A4210AFA7A00C01D7F /* routerConfig.m */,
+				1C73E2A6210AFA9300C01D7F /* routerInfo.plist */,
+				1C73E2A8210AFAB500C01D7F /* Wpage1.h */,
+				1C73E2A9210AFAB500C01D7F /* Wpage1.m */,
 			);
 			name = "Example for WRouter";
 			path = WRouter;
@@ -299,6 +294,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				1C73E2A7210AFA9300C01D7F /* routerInfo.plist in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,10 +353,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C73E2AA210AFAB500C01D7F /* Wpage1.m in Sources */,
 				6003F59E195388D20070C39A /* WAppDelegate.m in Sources */,
 				1CCBEBAC21080B1B007D75F7 /* Wtest.m in Sources */,
 				6003F5A7195388D20070C39A /* WViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				1C73E2A5210AFA7A00C01D7F /* routerConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

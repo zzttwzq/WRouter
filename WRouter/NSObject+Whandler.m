@@ -238,7 +238,7 @@
 }
 
 
-+ (void) DEBUGLog:(NSString *)message;
+- (void) DEBUGLog:(NSString *)message;
 {
     #ifdef DEBUG
         NSLog(@"<WRouter> %@",message);

@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "NSObject+Whandler.h"
 #import "WRouter.h"
 #import "WRouterEntry.h"
 
