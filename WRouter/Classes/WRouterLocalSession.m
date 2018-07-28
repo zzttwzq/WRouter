@@ -27,7 +27,7 @@
 + (NSDictionary *) readFromFileName:(NSString *)fileName;
 {
     NSString *filePath = [WFileManager getFilePathWithFileName:fileName];
-    return = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
+    return [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
 }
 
 

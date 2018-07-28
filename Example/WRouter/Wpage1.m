@@ -14,9 +14,22 @@
 
 @implementation Wpage1
 
+- (void) viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+
+    self.backs(@"111");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    UILabel *label = [UILabel new];
+    label.frame = CGRectMake(100, 100, 100, 100);
+    label.text = @"page1";
+    label.backgroundColor = [UIColor redColor];
+    [self.view addSubview:label];
 }
 
 - (void)didReceiveMemoryWarning {

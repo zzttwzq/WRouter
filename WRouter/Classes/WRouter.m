@@ -55,7 +55,7 @@ static dispatch_once_t once;
         return;
     }
 
-    [self.routerInfos addEntriesFromDictionary:[WRouterLocalSession readFromFileName:fileName]];
+    [self addRouterFromeDict:[WRouterLocalSession readFromFileName:fileName]];
 }
 
 
@@ -66,21 +66,12 @@ static dispatch_once_t once;
  */
 - (void) addRouterFromeArray:(NSArray *)array;
 {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     for (NSString *scheme in array) {
-
-        if (![WRouter entryListScheme:scheme] &&
-            scheme.length > 0) {
-
-            WRouterEntry *newEntry = [[WRouterEntry alloc] initWithScheme:scheme];
-            [self.entryList addObject:newEntry];
-
-            [self.entryList setValue:scheme forKey:scheme];
-        }
-        else{
-
-            [WRouterURLDecoder showDebugLog:[NSString stringWithFormat:@"无法添加scheme %@",scheme]];
-        }
+        [dict setObject:scheme forKey:scheme];
     }
+
+    [self addRouterFromeDict:dict];
 }
 
 
@@ -91,20 +82,26 @@ static dispatch_once_t once;
  */
 - (void) addRouterFromeDict:(NSDictionary *)dict;
 {
+    [self.routerInfos addEntriesFromDictionary:dict];
+
     for (NSString *key in dict) {
 
         NSString *value = dict[key];
-        if (![WRouter entryListScheme:value] &&
-            value.length > 0) {
+        if (value.length > 0) {
 
-            WRouterEntry *newEntry = [[WRouterEntry alloc] initWithScheme:value];
-            [self.entryList addObject:newEntry];
+            [self.routerInfos setObject:value forKey:key];
 
-            [self.entryList setValue:value forKey:key];
+            WRouterURLDecoder *originDecoder = [[WRouterURLDecoder alloc] initWithScheme:key];
+            WRouterURLDecoder *decoder = [self decoderWithScheme:value];
+            [self.routerInfos setObject:decoder.urlString forKey:originDecoder.className];
+            [self.routerInfos setObject:decoder.urlString forKey:decoder.className];
+            [self.routerInfos setObject:decoder.urlString forKey:originDecoder.urlString];
+
+            [self addScheme:value handleBlock:nil];
         }
         else{
 
-            [WRouterURLDecoder showDebugLog:[NSString stringWithFormat:@"无法添加scheme key:%@  value:%@",key,value]];
+            [WRouterURLDecoder showDebugLog:[NSString stringWithFormat:@"无法添加scheme key:%@  value:%@ 路由已存在或路由为空!",key,value]];
         }
     }
 }
@@ -133,7 +130,6 @@ static dispatch_once_t once;
 }
 
 
-
 /**
  添加路由
 
@@ -143,19 +139,22 @@ static dispatch_once_t once;
 - (void) addScheme:(NSString *)scheme
        handleBlock:(WRouterCallBack)handleBlock;
 {
-    WRouterEntry *entry = [self entryWithScheme:scheme];
+    NSString *existRouter = [self getSchemeFromeAllKeys:scheme];
+    if (existRouter) {
+        scheme = existRouter;
+    }
+
+    WRouterURLDecoder *decoder = [self decoderWithScheme:scheme];
+
+    WRouterEntry *entry = [WRouter getRouterEntryWithDecoder:decoder];
     if (entry) {
 
         entry.callBackHanler = handleBlock;
     }
     else{
 
-        WRouterURLDecoder *decoder = [self decoderWithScheme:scheme];
-        WRouterEntry *entry = [[WRouterEntry alloc] initWithDecoder:decoder];
-
+        WRouterEntry *entry = [WRouterEntry entryWithDecoder:decoder];
         [self.entryList addObject:entry];
-        [self.routerInfos setObject:decoder.urlString forKey:decoder.className];
-        [self.routerInfos setObject:decoder.urlString forKey:decoder.urlString];
     }
 }
 
@@ -171,7 +170,7 @@ static dispatch_once_t once;
     //1.查找路由是否在路由列表中 所有key中
     for (NSString *key in [self.routerInfos allKeys]) {
 
-        if ([key containsString:scheme]) {
+        if ([key isEqualToString:scheme]) {
 
             return self.routerInfos[key];
         }
@@ -190,9 +189,9 @@ static dispatch_once_t once;
 - (NSString *) getSchemeFromeAllValues:(NSString *)scheme;
 {
     //1.查找路由是否在路由列表中 所有key中
-    for (NSString *key in [self.routerInfos allValues]) {
+    for (NSString *value in [self.routerInfos allValues]) {
 
-        if ([key containsString:scheme]) {
+        if ([value isEqualToString:scheme]) {
 
             return scheme;
         }
@@ -305,62 +304,80 @@ static dispatch_once_t once;
  @param scheme url
  @return 返回实体
  */
-- (WRouterEntry *) entryWithScheme:(NSString *)scheme;
++ (WRouterEntry *) getRouterEntryWithScheme:(NSString *)scheme;
 {
-    WRouterURLDecoder *decoder = [[WRouterURLDecoder alloc] initWithScheme:scheme];
+    WRouterURLDecoder *decoder = [[WRouter globalRouter] decoderWithScheme:scheme];
+    return [self getRouterEntryWithDecoder:decoder];
+}
+
+
+/**
+ 从获取路由列表中的实体
+
+ @param decoder 解析器
+ @return 返回实体
+ */
++ (WRouterEntry *) getRouterEntryWithDecoder:(WRouterURLDecoder *)decoder;
+{
     if (decoder) {
 
-        for (WRouterEntry *listEntry in self.entryList) {
+        for (WRouterEntry *listEntry in [WRouter globalRouter].entryList) {
 
-            if ([listEntry.scheme isEqualToString:decoder.urlString]) {
+            if ([listEntry.routerUrl isEqualToString:decoder.urlString]) {
 
                 return listEntry;
             }
         }
     }
-}
-
-#pragma mark - 推送路由
-/**
- 通过路由实体获取控制器
-
- @param entry 路由实体
- @return 返回控制器
- */
-+ (UIViewController *) getViewControllerFromeEntry:(WRouterEntry *)entry;
-{
-    if (entry) {
-
-        //创建控制器 并赋予新值
-        Class obj = NSClassFromString(entry.className);
-        UIViewController *viewCotroller = [obj new];
-        [viewCotroller setObjectWithDict:entry.params];
-
-        if (entry.callBackHanler) {
-            entry.callBackHanler(viewCotroller,callBack);
-        }
-
-        return viewCotroller;
-    }
-
     return nil;
 }
 
+
+#pragma mark - 推送路由
 
 /**
  通过路由获取控制器
 
  @param scheme 路由信息
- @param handleBlock 处理回调
+ @param callBack 处理回调
  @return 返回控制器
  */
 + (UIViewController *) getViewControllerFromeScheme:(NSString *)scheme
-                          handleBlock:(WRouterCallBack)handleBlock;
+                                           callBack:(DictionaryBlock)callBack;
 {
-    WRouterEntry *entry = [self entryWithScheme:scheme];
-    entry.callBackHanler = handleBlock;
+    //1.获取解析数据
+    WRouterURLDecoder *decoder = [[WRouter globalRouter] decoderWithScheme:scheme];
 
-    return [self getViewControllerFromeEntry:entry];
+    //2.判断跳转类型
+    if (decoder.routerType == WRouterType_Exist_Router||
+        decoder.routerType == WRouterType_App_UNKnownRouter) {
+
+        WRouterEntry *entry = [WRouter getRouterEntryWithDecoder:decoder];
+        if (entry) {
+
+            //创建控制器 并赋予新值
+            Class obj = NSClassFromString(entry.className);
+            UIViewController *viewCotroller = [obj new];
+            [viewCotroller setObjectWithDict:entry.params];
+
+            if (entry.callBackHanler) {
+                entry.callBackHanler(viewCotroller,callBack);
+            }
+
+            return viewCotroller;
+        }
+    }
+    else if (decoder.routerType == WRouterType_Company_Router) {
+
+    }
+    else if (decoder.routerType == WRouterType_Other_Router) {
+
+    }
+    else if (decoder.routerType == WRouterType_Company_HTML ||
+             decoder.routerType == WRouterType_Other_HTML) {
+
+    }
+    return nil;
 }
 
 
@@ -372,23 +389,29 @@ static dispatch_once_t once;
  @param params 参数
  @param callBack 回调（如果前面有处理回调，就会调用该方法，非常适合多个block回调的情况）
  */
-- (void) pushViewControllerWithScheme:(NSString *)scheme
++ (void) pushViewControllerWithScheme:(NSString *)scheme
                                target:(UIViewController *)target
                                params:(NSDictionary *)params
                              callBack:(DictionaryBlock)callBack;
 {
     //1.获取解析数据
-    WRouterURLDecoder *decoder = [self decoderWithScheme:scheme];
-
+    WRouterURLDecoder *decoder = [[WRouter globalRouter] decoderWithScheme:scheme];
 
     //2.判断跳转类型
     if (decoder.routerType == WRouterType_Exist_Router||
         decoder.routerType == WRouterType_App_UNKnownRouter) {
 
-        WRouterEntry *entry = [self entryWithScheme:scheme];
+        WRouterEntry *entry = [WRouter getRouterEntryWithDecoder:decoder];
         if (entry) {
 
-            UIViewController *controller = [self getViewControllerFromeEntry:entry];
+            //创建控制器 并赋予新值
+            Class obj = NSClassFromString(entry.className);
+            UIViewController *viewCotroller = [obj new];
+            [viewCotroller setObjectWithDict:entry.params];
+
+            if (entry.callBackHanler) {
+                entry.callBackHanler(viewCotroller,callBack);
+            }
 
             if (target) {
 
@@ -414,7 +437,7 @@ static dispatch_once_t once;
     }
     else if (decoder.routerType == WRouterType_Other_Router) {
 
-        if (!self.NotPushUNKnowScheme) {
+        if (![WRouter globalRouter].NotPushUNKnowScheme) {
 
             //如果不包含就跳转到其他的app里
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:scheme]]) {
@@ -425,8 +448,8 @@ static dispatch_once_t once;
     else if (decoder.routerType == WRouterType_Company_HTML ||
              decoder.routerType == WRouterType_Other_HTML) {
 
-        if (self.unHandledHtmlUrl) {
-            self.unHandledHtmlUrl(scheme);
+        if ([WRouter globalRouter].unHandledHtmlUrl) {
+            [WRouter globalRouter].unHandledHtmlUrl(scheme);
         }
     }
 }

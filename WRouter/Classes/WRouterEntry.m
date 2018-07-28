@@ -9,25 +9,27 @@
 
 @implementation WRouterEntry
 
-- (instancetype) initWithScheme:(NSString *)scheme;
++ (WRouterEntry *) entryWithScheme:(NSString *)scheme;
 {
-    self = [super init];
-    if (self) {
+    WRouterURLDecoder *decoder = [[WRouterURLDecoder alloc] initWithScheme:scheme];
 
-        self.decoder = [[WRouterURLDecoder alloc] initWithScheme:scheme];
-        self.scheme = self.decoder.urlString;
-    }
-    return self;
+    WRouterEntry *entry = [WRouterEntry new];
+    entry.routerUrl = decoder.urlString;
+    entry.className = decoder.className;
+    entry.params = decoder.params;
+
+    return entry;
 }
 
-- (instancetype) initWithDecoder:(WRouterURLDecoder *)decoder;
++ (WRouterEntry *) entryWithDecoder:(WRouterURLDecoder *)decoder;
 {
-    self = [super init];
-    if (self) {
+    WRouterEntry *entry = [WRouterEntry new];
+    entry.routerUrl = decoder.urlString;
+    entry.className = decoder.className;
+    entry.params = decoder.params;
 
-        self.decoder = decoder;
-        self.scheme = self.decoder.urlString;
-    }
-    return self;
+    return entry;
 }
+
+
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0EB052210B06BD00EBBE21 /* WRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0EB051210B06BD00EBBE21 /* WRouter.framework */; };
 		1C73E2A5210AFA7A00C01D7F /* routerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2A4210AFA7A00C01D7F /* routerConfig.m */; };
 		1C73E2A7210AFA9300C01D7F /* routerInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C73E2A6210AFA9300C01D7F /* routerInfo.plist */; };
 		1C73E2AA210AFAB500C01D7F /* Wpage1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C73E2A9210AFAB500C01D7F /* Wpage1.m */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C0EB051210B06BD00EBBE21 /* WRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C73E2A3210AFA7A00C01D7F /* routerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = routerConfig.h; sourceTree = "<group>"; };
 		1C73E2A4210AFA7A00C01D7F /* routerConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = routerConfig.m; sourceTree = "<group>"; };
 		1C73E2A6210AFA9300C01D7F /* routerInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = routerInfo.plist; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0EB052210B06BD00EBBE21 /* WRouter.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -132,6 +135,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C0EB051210B06BD00EBBE21 /* WRouter.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,

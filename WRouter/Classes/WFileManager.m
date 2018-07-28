@@ -466,9 +466,9 @@
  *
  *  @return 磁盘大小
  */
-+(CGFloat)allSizeOfDisk;
++(float)allSizeOfDisk;
 {
-    CGFloat size = 0.0;
+    float size = 0.0;
 
     NSError *error;
 
@@ -494,9 +494,9 @@
  *
  *  @return 可用空间大小
  */
-+(CGFloat)freeSizeOfDisk;
++(float)freeSizeOfDisk;
 {
-    CGFloat size = 0.0;
+    float size = 0.0;
 
     NSError *error;
 
@@ -504,7 +504,7 @@
 
     if (error) {
 
-        CGFloat size = 0.0;
+        float size = 0.0;
 
         NSError *error;
 

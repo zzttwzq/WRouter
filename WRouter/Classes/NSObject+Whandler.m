@@ -237,6 +237,11 @@
     }
 }
 
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    [self DEBUGLog:[NSString stringWithFormat:@"找不到key :%@",key]];
+}
+
 
 - (void) DEBUGLog:(NSString *)message;
 {

@@ -9,17 +9,33 @@
 #import "WRouterURLDecoder.h"
 
 @interface WRouterEntry : NSObject
+/**
+ 路由直接能识别的url
+ */
+@property (nonatomic,copy) NSString *routerUrl;
 
+
+/**
+ 对应的类名
+ */
+@property (nonatomic,copy) NSString *className;
+
+
+/**
+ 对应的参数
+ */
+@property (nonatomic,strong) NSDictionary *params;
+
+
+/**
+ 对应的回调
+ */
 @property (nonatomic,copy) WRouterCallBack _Nullable callBackHanler;
 
-@property (nonatomic,copy) NSString *scheme;
-
-@property (nonatomic,strong) WRouterURLDecoder *decoder;
 
 
-- (instancetype) initWithScheme:(NSString *)scheme;
++ (WRouterEntry *) entryWithScheme:(NSString *)scheme;
 
-- (instancetype) initWithDecoder:(WRouterURLDecoder *)decoder;
-
++ (WRouterEntry *) entryWithDecoder:(WRouterURLDecoder *)decoder;
 
 @end

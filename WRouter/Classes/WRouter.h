@@ -89,11 +89,11 @@
  通过路由获取控制器
 
  @param scheme 路由信息
- @param handleBlock 处理回调
+ @param callBack 处理回调
  @return 返回控制器
  */
 + (UIViewController *) getViewControllerFromeScheme:(NSString *)scheme
-                                        handleBlock:(WRouterCallBack)handleBlock;
+                                           callBack:(DictionaryBlock)callBack;
 
 /**
  跳转页面
@@ -142,7 +142,16 @@
  @param scheme url
  @return 返回实体
  */
-- (WRouterEntry *) entryWithScheme:(NSString *)scheme;
++ (WRouterEntry *) getRouterEntryWithScheme:(NSString *)scheme;
+
+
+/**
+ 从获取路由列表中的实体
+
+ @param decoder 解析器
+ @return 返回实体
+ */
++ (WRouterEntry *) getRouterEntryWithDecoder:(WRouterURLDecoder *)decoder;
 
 
 @end

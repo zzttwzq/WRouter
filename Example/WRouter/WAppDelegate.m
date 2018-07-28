@@ -7,11 +7,20 @@
 //
 
 #import "WAppDelegate.h"
+#import "WViewController.h"
 
 @implementation WAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:[WViewController new]];
+
+
+    self.window.rootViewController = navigation;
+
+    [self.window makeKeyAndVisible];
+
     // Override point for customization after application launch.
     return YES;
 }

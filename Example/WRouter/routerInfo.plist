@@ -2,11 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>page1</key>
+	<key>https://www.api-eh.com/page1</key>
 	<string>hengmeiApp://Wpage1</string>
-	<key>page2</key>
-	<string>hengmeiApp://Wpage1</string>
-	<key>page3</key>
-	<string>hengmeiApp://Wtest</string>
 </dict>
 </plist>

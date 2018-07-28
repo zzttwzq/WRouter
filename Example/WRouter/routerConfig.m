@@ -20,31 +20,25 @@
     [router addHosts:@[@"hmapp",@"hmApp",@"hengmeiApp",@"hengmeiapp"]];
     [router addHostTitles:@[@"www.baidu.com",@"www.apple.com",@"www.api-eh.com",@"www.testapi-eh.com"]];
 
-//    [router addRouterFromeDict:@{@"1":@"https://www.baidu.com"}];
-//    [router addRouterFromeDict:@{@"2":@"https://www.baidu.com/c"}];
-//
-//    [router addRouterFromeArray:@[@"https://www.aaa.com/1",@"https://www.aaa.com/2",@"https://www.aaa.com/3"]];
-//    [router addRouterFromePlistFile:@"routerInfo.plist"];
-//
-//
-//    router.unHandledHtmlUrl = ^(NSString * _Nullable urlString) {
-//
-//
-//    };
+    [router addRouterFromeDict:@{@"hengmeiApp://www.api-eh.com/Wpage1":@"hengmeiApp://Wpage1"}];
+    [router addRouterFromeArray:@[@"hengmeiApp://Wpage1"]];
+
+    [router addRouterFromePlistFile:@"routerInfo.plist"];
 
 
-    [router addScheme:@"location" handleBlock:^(id  _Nullable viewController, IDDataBlock  _Nullable dataCallBack) {
+    router.unHandledHtmlUrl = ^(NSString * _Nullable urlString) {
+
+
+    };
+
+
+    [router addScheme:@"page1" handleBlock:^(id  _Nullable viewController, IDDataBlock  _Nullable dataCallBack) {
 
         Wtest *test = viewController;
         test.backs = ^(NSString *string) {
 
             dataCallBack(@{@"data":string});
         };
-    }];
-
-    [WRouter pushViewControllerWithScheme:@"location" target:self params:nil callBack:^(NSDictionary * _Nullable responseDict) {
-
-
     }];
 }
 

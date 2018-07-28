@@ -6,8 +6,12 @@
 //  Copyright © 2018年 zzttwzq. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Wtest.h"
 
-@interface Wpage1 : UIViewController
+@interface Wpage1 : Wtest
+
+@property (nonatomic,copy) NSString *name;
+@property (nonatomic,assign) int age;
+
 
 @end

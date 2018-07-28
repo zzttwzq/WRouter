@@ -14,4 +14,9 @@ typedef void(^back)(NSString *string);
 
 @property (nonatomic,copy) back backs;
 
+@property (nonatomic,assign) BOOL isActive;
+@property (nonatomic,assign) float activeTime;
+@property (nonatomic,copy) NSString *activeName;
+@property (nonatomic,strong) NSArray *activeArray;
+
 @end
