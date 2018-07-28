@@ -96,6 +96,8 @@ static dispatch_once_t once;
             [self.routerInfos setObject:decoder.urlString forKey:originDecoder.className];
             [self.routerInfos setObject:decoder.urlString forKey:decoder.className];
             [self.routerInfos setObject:decoder.urlString forKey:originDecoder.urlString];
+            [self.routerInfos setObject:decoder.urlString forKey:[NSString stringWithFormat:@"WRouter://%@",originDecoder.className]];
+            [self.routerInfos setObject:decoder.urlString forKey:[NSString stringWithFormat:@"WRouter://%@",decoder.className]];
 
             [self addScheme:value handleBlock:nil];
         }
@@ -407,7 +409,11 @@ static dispatch_once_t once;
             //创建控制器 并赋予新值
             Class obj = NSClassFromString(entry.className);
             UIViewController *viewCotroller = [obj new];
-            [viewCotroller setObjectWithDict:entry.params];
+
+            NSMutableDictionary *totalParams = [NSMutableDictionary dictionaryWithDictionary:entry.params];
+            [totalParams addEntriesFromDictionary:params];
+            [viewCotroller setObjectWithDict:totalParams];
+
 
             if (entry.callBackHanler) {
                 entry.callBackHanler(viewCotroller,callBack);

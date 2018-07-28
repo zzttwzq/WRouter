@@ -50,8 +50,17 @@
 
     if (index == 0) {
 
-        [WRouter pushViewControllerWithScheme:@"page1" target:self params:@{@"abc":@"1",@"def":@"2"} callBack:^(NSDictionary * _Nullable responseDict) {
+        NSDictionary *dict = @{@"isActive":@(1),
+                               @"activeTime":@"0.36363",
+                               @"activeName":@"了了了",
+                               @"activeArray":@[@"成",@"功",@"了"],
+                               @"name":@"wu",
+                               @"age":@(100),
+                               };
 
+        [WRouter pushViewControllerWithScheme:@"page1" target:self params:dict callBack:^(NSDictionary * _Nullable responseDict) {
+
+            NSLog(@"%@",responseDict);
         }];
     }
     else if (index == 1) {

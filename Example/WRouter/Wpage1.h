@@ -9,9 +9,8 @@
 #import "Wtest.h"
 
 @interface Wpage1 : Wtest
-
+@property (nonatomic,copy) DictionaryBlock block;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,assign) int age;
-
 
 @end

@@ -15,18 +15,14 @@
 
 @implementation Wtest
 
-- (void) viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-
-    self.backs(@"111");
-}
-
 - (void) viewDidLoad
 {
     [super viewDidLoad];
 
-
+    NSLog(@"--->>>%d",self.isActive);
+    NSLog(@"--->>>%f",self.activeTime);
+    NSLog(@"--->>>%@",self.activeName);
+    NSLog(@"--->>>%@",self.activeArray);
 }
 
 @end

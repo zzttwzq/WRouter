@@ -17,7 +17,6 @@
 - (void) viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-
     self.backs(@"111");
 }
 
@@ -30,6 +29,9 @@
     label.text = @"page1";
     label.backgroundColor = [UIColor redColor];
     [self.view addSubview:label];
+
+    NSLog(@"+++>>>%@",self.name);
+    NSLog(@"+++>>>%d",self.age);
 }
 
 - (void)didReceiveMemoryWarning {
