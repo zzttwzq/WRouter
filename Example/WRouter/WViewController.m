@@ -65,6 +65,10 @@
     }
     else if (index == 1) {
 
+        [WRouter pushViewControllerWithScheme:@"https://www.baidu.com" target:self params:nil callBack:^(NSDictionary * _Nullable responseDict) {
+
+            NSLog(@"%@",responseDict);
+        }];
     }
     else if (index == 2) {
 

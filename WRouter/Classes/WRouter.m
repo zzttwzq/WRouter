@@ -214,11 +214,6 @@ static dispatch_once_t once;
     WRouterURLDecoder *tempDecoder = [[WRouterURLDecoder alloc] initWithScheme:scheme];
     if (tempDecoder) {
 
-        if (self.custmDecodeHandler) {
-            self.custmDecodeHandler(tempDecoder);
-            return tempDecoder;
-        }
-
         //在key中，那么先取key 在拼接参数 然后实体化一个decoder
         NSString *valueScheme = [self getSchemeFromeAllKeys:tempDecoder.urlString];
         if (valueScheme) {
@@ -231,13 +226,16 @@ static dispatch_once_t once;
 
             WRouterURLDecoder *decoder = [[WRouterURLDecoder alloc] initWithScheme:scheme];
             decoder.routerType = WRouterType_Exist_Router;
-            return decoder;
+
+            if (self.custmDecodeHandler) {
+                self.custmDecodeHandler(decoder);
+                return decoder;
+            }
         }
         //直接在value 中 就直接跳
         else if ([self getSchemeFromeAllValues:tempDecoder.urlString]){
 
             tempDecoder.routerType = WRouterType_Exist_Router;
-            return tempDecoder;
         }
         else{
 
@@ -252,13 +250,11 @@ static dispatch_once_t once;
                         [tempDecoder.hostTile isEqualToString:@"http"]) {
 
                         tempDecoder.routerType = WRouterType_Company_HTML;
-                        return tempDecoder;
                     }
                     else{
 
                         //包含头 和 host 那就强制解析
                         tempDecoder.routerType = WRouterType_App_UNKnownRouter;
-                        return tempDecoder;
                     }
                 }
                 else{
@@ -268,13 +264,11 @@ static dispatch_once_t once;
                         [tempDecoder.hostTile isEqualToString:@"http"]) {
 
                         tempDecoder.routerType = WRouterType_Other_HTML;
-                        return tempDecoder;
                     }
                     else{
 
                         //包含头 和 host 那就强制解析
                         tempDecoder.routerType = WRouterType_App_UNKnownRouter;
-                        return tempDecoder;
                     }
                 }
             }
@@ -285,16 +279,19 @@ static dispatch_once_t once;
                 if ([self.availableHosts containsObject:tempDecoder.host]) {
 
                     tempDecoder.routerType = WRouterType_Company_Router;
-                    return tempDecoder;
                 }
                 //其他公司的app 默认是跳转的
                 else{
 
                     tempDecoder.routerType = WRouterType_Other_Router;
-                    return tempDecoder;
                 }
             }
         }
+
+        if (self.custmDecodeHandler) {
+            self.custmDecodeHandler(tempDecoder);
+        }
+        return tempDecoder;
     }
     return nil;
 }
@@ -454,8 +451,8 @@ static dispatch_once_t once;
     else if (decoder.routerType == WRouterType_Company_HTML ||
              decoder.routerType == WRouterType_Other_HTML) {
 
-        if ([WRouter globalRouter].unHandledHtmlUrl) {
-            [WRouter globalRouter].unHandledHtmlUrl(scheme);
+        if ([WRouter globalRouter].handledHtmlUrl) {
+            [WRouter globalRouter].handledHtmlUrl(scheme);
         }
     }
 }

@@ -30,7 +30,7 @@ typedef void (^DictionaryBlock)(NSDictionary * _Nullable responseDict);
 
 typedef void (^StringBlock)(NSString * _Nullable urlString);
 
-typedef void (^decoderBlock)(WRouterURLDecoder * _Nullable urlString);
+typedef void (^decoderBlock)(WRouterURLDecoder * _Nullable decoder);
 
 
 

@@ -26,10 +26,13 @@
     [router addRouterFromePlistFile:@"routerInfo.plist"];
 
 
-    router.unHandledHtmlUrl = ^(NSString * _Nullable urlString) {
+    router.handledHtmlUrl = ^(NSString * _Nullable urlString) {
 
 
     };
+
+
+    router.custmDecodeHandler = ^(WRouterURLDecoder * _Nullable decoder) {};
 
 
     [router addScheme:@"page1" handleBlock:^(id  _Nullable viewController, IDDataBlock  _Nullable dataCallBack) {

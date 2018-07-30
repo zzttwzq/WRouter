@@ -13,7 +13,7 @@
 /**
  需要跳转到h5回调
  */
-@property (nonatomic,copy) StringBlock unHandledHtmlUrl;
+@property (nonatomic,copy) StringBlock handledHtmlUrl;
 
 @property (nonatomic,copy) decoderBlock custmDecodeHandler;
 
