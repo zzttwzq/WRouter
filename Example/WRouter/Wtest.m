@@ -19,10 +19,10 @@
 {
     [super viewDidLoad];
 
-    NSLog(@"--->>>%d",self.isActive);
-    NSLog(@"--->>>%f",self.activeTime);
-    NSLog(@"--->>>%@",self.activeName);
-    NSLog(@"--->>>%@",self.activeArray);
+//    NSLog(@"--->>>%d",self.isActive);
+//    NSLog(@"--->>>%f",self.activeTime);
+//    NSLog(@"--->>>%@",self.activeName);
+//    NSLog(@"--->>>%@",self.activeArray);
 }
 
 @end

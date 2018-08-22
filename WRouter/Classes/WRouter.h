@@ -75,10 +75,10 @@
 - (void) addHostTitles:(NSArray *)array;
 
 /**
- 添加路由
+ 添加复杂的block（或者多个block）
 
- @param scheme 要添加的路由规则
- @param handleBlock 处理方法
+ @param scheme 对应的scheme
+ @param handleBlock block 方法
  */
 - (void) addScheme:(NSString *)scheme
        handleBlock:(WRouterCallBack)handleBlock;
@@ -115,7 +115,7 @@
  @param scheme url
  @return 返回包含的key
  */
-- (NSString *) getSchemeFromeAllKeys:(NSString *)scheme;
+- (NSString *) schemeFromeAllKeys:(NSString *)scheme;
 
 
 /**
@@ -124,7 +124,7 @@
  @param scheme url
  @return 返回包含的value
  */
-- (NSString *) getSchemeFromeAllValues:(NSString *)scheme;
+- (NSString *) schemeFromeAllValues:(NSString *)scheme;
 
 
 /**
@@ -142,7 +142,7 @@
  @param scheme url
  @return 返回实体
  */
-+ (WRouterEntry *) getRouterEntryWithScheme:(NSString *)scheme;
++ (WRouterEntry *) routerEntryWithScheme:(NSString *)scheme;
 
 
 /**
@@ -151,7 +151,7 @@
  @param decoder 解析器
  @return 返回实体
  */
-+ (WRouterEntry *) getRouterEntryWithDecoder:(WRouterURLDecoder *)decoder;
++ (WRouterEntry *) routerEntryWithDecoder:(WRouterURLDecoder *)decoder;
 
 
 @end

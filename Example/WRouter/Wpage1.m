@@ -17,7 +17,18 @@
 - (void) viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    self.backs(@"111");
+//    self.backs(@"111");
+
+    NSDictionary *dict = @{
+                           @"a":@"1",
+                           @"b":@"2",
+                           @"c":@"3",
+                           @"d":@"4",
+                           @"e":@"5"
+                           };
+    if (self.block) {
+        self.block(dict);
+    }
 }
 
 - (void)viewDidLoad {
@@ -29,9 +40,6 @@
     label.text = @"page1";
     label.backgroundColor = [UIColor redColor];
     [self.view addSubview:label];
-
-    NSLog(@"+++>>>%@",self.name);
-    NSLog(@"+++>>>%d",self.age);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^back)(NSString *string);
+typedef void(^callBack)(NSDictionary *dict);
 
 @interface Wtest : UIViewController
-
-@property (nonatomic,copy) back backs;
-
 @property (nonatomic,assign) BOOL isActive;
 @property (nonatomic,assign) float activeTime;
 @property (nonatomic,copy) NSString *activeName;

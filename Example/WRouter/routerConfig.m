@@ -31,18 +31,15 @@
 
     };
 
+    //自定义的解析规则，适应自己的需要
+    router.custmDecodeHandler = ^(WRouterURLDecoder * _Nullable decoder) {
 
-    router.custmDecodeHandler = ^(WRouterURLDecoder * _Nullable decoder) {};
+        WRouterURLDecoder *newDecoder = [[WRouter globalRouter] decoderWithScheme:decoder.params[@"routerpath"]];
 
-
-    [router addScheme:@"page1" handleBlock:^(id  _Nullable viewController, IDDataBlock  _Nullable dataCallBack) {
-
-        Wtest *test = viewController;
-        test.backs = ^(NSString *string) {
-
-            dataCallBack(@{@"data":string});
-        };
-    }];
+        decoder.className = newDecoder.className;
+        decoder.routerType = newDecoder.routerType;
+        decoder.urlString = newDecoder.urlString;
+    };
 }
 
 @end

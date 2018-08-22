@@ -16,7 +16,6 @@
 
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:[WViewController new]];
 
-
     self.window.rootViewController = navigation;
 
     [self.window makeKeyAndVisible];

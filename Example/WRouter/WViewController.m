@@ -50,12 +50,18 @@
 
     if (index == 0) {
 
+        void(^block)(NSDictionary *dict) = ^(NSDictionary *dict){
+
+            NSLog(@">>>>>>>>>>>>%@",dict);
+        };
+
         NSDictionary *dict = @{@"isActive":@(1),
                                @"activeTime":@"0.36363",
                                @"activeName":@"了了了",
                                @"activeArray":@[@"成",@"功",@"了"],
                                @"name":@"wu",
                                @"age":@(100),
+                               @"block":block,
                                };
 
         [WRouter pushViewControllerWithScheme:@"page1" target:self params:dict callBack:^(NSDictionary * _Nullable responseDict) {
@@ -72,6 +78,10 @@
     }
     else if (index == 2) {
 
+        [WRouter pushViewControllerWithScheme:@"hengmeiapp://comlay/main/gotopage?routerpath=page1&counponid=&counponmoney=&dikoumoney=&jifen=&ordercode=${res.retData.orderCode}&orderid=${res.retData.orderId}&ordermoney=${money}&paymoney=${money}" target:self params:nil callBack:^(NSDictionary * _Nullable responseDict) {
+
+            NSLog(@"%@",responseDict);
+        }];
     }
     else if (index == 3) {
 

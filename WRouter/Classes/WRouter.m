@@ -115,7 +115,7 @@ static dispatch_once_t once;
 
  @param array 要添加的host数组
  */
-- (void)addHosts:(NSArray *)array;
+- (void) addHosts:(NSArray *)array;
 {
     [self.availableHosts addObjectsFromArray:array];
 }
@@ -141,14 +141,14 @@ static dispatch_once_t once;
 - (void) addScheme:(NSString *)scheme
        handleBlock:(WRouterCallBack)handleBlock;
 {
-    NSString *existRouter = [self getSchemeFromeAllKeys:scheme];
+    NSString *existRouter = [self schemeFromeAllKeys:scheme];
     if (existRouter) {
         scheme = existRouter;
     }
 
     WRouterURLDecoder *decoder = [self decoderWithScheme:scheme];
 
-    WRouterEntry *entry = [WRouter getRouterEntryWithDecoder:decoder];
+    WRouterEntry *entry = [WRouter routerEntryWithDecoder:decoder];
     if (entry) {
 
         entry.callBackHanler = handleBlock;
@@ -167,7 +167,7 @@ static dispatch_once_t once;
  @param scheme url
  @return 返回包含的key
  */
-- (NSString *) getSchemeFromeAllKeys:(NSString *)scheme;
+- (NSString *) schemeFromeAllKeys:(NSString *)scheme;
 {
     //1.查找路由是否在路由列表中 所有key中
     for (NSString *key in [self.routerInfos allKeys]) {
@@ -188,7 +188,7 @@ static dispatch_once_t once;
  @param scheme url
  @return 返回包含的value
  */
-- (NSString *) getSchemeFromeAllValues:(NSString *)scheme;
+- (NSString *) schemeFromeAllValues:(NSString *)scheme;
 {
     //1.查找路由是否在路由列表中 所有key中
     for (NSString *value in [self.routerInfos allValues]) {
@@ -215,7 +215,7 @@ static dispatch_once_t once;
     if (tempDecoder) {
 
         //在key中，那么先取key 在拼接参数 然后实体化一个decoder
-        NSString *valueScheme = [self getSchemeFromeAllKeys:tempDecoder.urlString];
+        NSString *valueScheme = [self schemeFromeAllKeys:tempDecoder.urlString];
         if (valueScheme) {
 
             scheme = valueScheme;
@@ -226,14 +226,10 @@ static dispatch_once_t once;
 
             WRouterURLDecoder *decoder = [[WRouterURLDecoder alloc] initWithScheme:scheme];
             decoder.routerType = WRouterType_Exist_Router;
-
-            if (self.custmDecodeHandler) {
-                self.custmDecodeHandler(decoder);
-                return decoder;
-            }
+            return decoder;
         }
         //直接在value 中 就直接跳
-        else if ([self getSchemeFromeAllValues:tempDecoder.urlString]){
+        else if ([self schemeFromeAllValues:tempDecoder.urlString]){
 
             tempDecoder.routerType = WRouterType_Exist_Router;
         }
@@ -288,9 +284,6 @@ static dispatch_once_t once;
             }
         }
 
-        if (self.custmDecodeHandler) {
-            self.custmDecodeHandler(tempDecoder);
-        }
         return tempDecoder;
     }
     return nil;
@@ -303,10 +296,10 @@ static dispatch_once_t once;
  @param scheme url
  @return 返回实体
  */
-+ (WRouterEntry *) getRouterEntryWithScheme:(NSString *)scheme;
++ (WRouterEntry *) routerEntryWithScheme:(NSString *)scheme;
 {
     WRouterURLDecoder *decoder = [[WRouter globalRouter] decoderWithScheme:scheme];
-    return [self getRouterEntryWithDecoder:decoder];
+    return [self routerEntryWithDecoder:decoder];
 }
 
 
@@ -316,7 +309,7 @@ static dispatch_once_t once;
  @param decoder 解析器
  @return 返回实体
  */
-+ (WRouterEntry *) getRouterEntryWithDecoder:(WRouterURLDecoder *)decoder;
++ (WRouterEntry *) routerEntryWithDecoder:(WRouterURLDecoder *)decoder;
 {
     if (decoder) {
 
@@ -351,7 +344,7 @@ static dispatch_once_t once;
     if (decoder.routerType == WRouterType_Exist_Router||
         decoder.routerType == WRouterType_App_UNKnownRouter) {
 
-        WRouterEntry *entry = [WRouter getRouterEntryWithDecoder:decoder];
+        WRouterEntry *entry = [WRouter routerEntryWithDecoder:decoder];
         if (entry) {
 
             //创建控制器 并赋予新值
@@ -395,12 +388,15 @@ static dispatch_once_t once;
 {
     //1.获取解析数据
     WRouterURLDecoder *decoder = [[WRouter globalRouter] decoderWithScheme:scheme];
+    if ([WRouter globalRouter].custmDecodeHandler) {
+        [WRouter globalRouter].custmDecodeHandler(decoder);
+    }
 
     //2.判断跳转类型
     if (decoder.routerType == WRouterType_Exist_Router||
         decoder.routerType == WRouterType_App_UNKnownRouter) {
 
-        WRouterEntry *entry = [WRouter getRouterEntryWithDecoder:decoder];
+        WRouterEntry *entry = [WRouter routerEntryWithDecoder:decoder];
         if (entry) {
 
             //创建控制器 并赋予新值
@@ -411,15 +407,35 @@ static dispatch_once_t once;
             [totalParams addEntriesFromDictionary:params];
             [viewCotroller setObjectWithDict:totalParams];
 
-
+            //自定义的block回调
             if (entry.callBackHanler) {
                 entry.callBackHanler(viewCotroller,callBack);
             }
 
+            //如果统一的block回调
+            NSArray *array = [viewCotroller getPropertyNames];
+            for (NSString *key in array) {
+
+                if ([key isEqualToString:@"block"]) {
+
+                    if (totalParams[@"block"]) {
+                        callBack = totalParams[@"block"];
+                    }
+                    else{
+
+                        if (callBack) {
+                            [viewCotroller setValue:callBack forKey:@"block"];
+                        }
+                    }
+                }
+            }
+
+            //跳转页面
             if (target) {
 
                 [target.navigationController pushViewController:viewCotroller animated:YES];
-            }else{
+            }
+            else{
 
                 SEL dismissbtn = NSSelectorFromString(@"showDismissBtn");
                 if ([(UIViewController *)viewCotroller respondsToSelector:dismissbtn]) {

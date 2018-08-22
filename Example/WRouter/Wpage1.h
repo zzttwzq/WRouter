@@ -9,6 +9,7 @@
 #import "Wtest.h"
 
 @interface Wpage1 : Wtest
+@property (nonatomic,copy) callBack block;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,assign) int age;
 
