@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WRouter'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = '一个可以自定义规则的路由，支持universalLink,一般的路由规则，，还可以处理正常的html回调。'
 
 # This description is used to generate tags and improve search results.
