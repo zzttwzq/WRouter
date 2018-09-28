@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSObject+Whandler.h"
+#import <WBasicLibrary/WBasicHeader.h>
 
 @class WRouterURLDecoder;
 

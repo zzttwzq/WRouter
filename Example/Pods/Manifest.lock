@@ -1,15 +1,45 @@
 PODS:
-  - WRouter (0.1.2)
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - WBasicLibrary (0.3.9):
+    - AFNetworking
+  - WExpandLibrary (0.2.0):
+    - AFNetworking
+    - WBasicLibrary
+  - WRouter (1.0.4):
+    - WExpandLibrary
 
 DEPENDENCIES:
   - WRouter (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - WBasicLibrary
+    - WExpandLibrary
 
 EXTERNAL SOURCES:
   WRouter:
     :path: "../"
 
 SPEC CHECKSUMS:
-  WRouter: 8f69059d318aac78927e8e5c7ba5739a54e8fcfe
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  WBasicLibrary: b93014b6dd4c78df60825c9ea8fa2c306acf235f
+  WExpandLibrary: a49b325b7b45f2f7aa819117e60ea37dc354e73d
+  WRouter: 07872e09fe411e813f5149d26535cb440e786a79
 
 PODFILE CHECKSUM: f33eabb2653892f8f53420cb0e5a3c08b5838da7
 

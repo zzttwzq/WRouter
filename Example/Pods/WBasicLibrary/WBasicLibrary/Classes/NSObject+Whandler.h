@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MicroDefinetion.h"
 
 @interface NSObject (Whandler)
 
@@ -68,6 +69,21 @@
 - (void) safeSetWithDict:(NSDictionary *)dict;
 
 
-- (void) DEBUGLog:(NSString *)message;
+/**
+ 显示调试信息
 
+ @param target 对象
+ @param message 消息
+ */
+- (void) DEBUGWithTarget:(id)target
+                 message:(NSString *)message;
+
+
+#pragma mark - 其他
+/**
+ 获取当前的viewcontroller
+
+ @return 当前的控制器
+ */
+- (UIViewController *)currentViewController;
 @end

@@ -12,6 +12,8 @@
 
 #import "WRouter.h"
 #import "WRouterEntry.h"
+#import "WRouterLocalSession.h"
+#import "WRouterURLDecoder.h"
 
 FOUNDATION_EXPORT double WRouterVersionNumber;
 FOUNDATION_EXPORT const unsigned char WRouterVersionString[];

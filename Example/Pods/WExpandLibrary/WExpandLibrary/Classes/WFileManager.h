@@ -194,7 +194,7 @@ typedef NS_ENUM(NSInteger,WFileBasePath) {
  *
  *  @return 磁盘大小
  */
-+(float)allSizeOfDisk;
++(CGFloat)allSizeOfDisk;
 
 
 /**
@@ -202,7 +202,7 @@ typedef NS_ENUM(NSInteger,WFileBasePath) {
  *
  *  @return 可用空间大小
  */
-+(float)freeSizeOfDisk;
++(CGFloat)freeSizeOfDisk;
 
 
 /**

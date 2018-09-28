@@ -1,7 +1,7 @@
 {
   "name": "WRouter",
-  "version": "0.1.2",
-  "summary": "A short description of WRouter.",
+  "version": "1.0.4",
+  "summary": "一个可以自定义规则的路由，支持universalLink,一般的路由规则，，还可以处理正常的html回调。",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/zzttwzq/WRouter",
   "license": {
@@ -13,10 +13,15 @@
   },
   "source": {
     "git": "https://github.com/zzttwzq/WRouter.git",
-    "tag": "0.1.2"
+    "tag": "1.0.4"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "WRouter/Classes/**/*"
+  "source_files": "WRouter/Classes/**/*",
+  "dependencies": {
+    "WExpandLibrary": [
+
+    ]
+  }
 }

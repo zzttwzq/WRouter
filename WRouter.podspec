@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WRouter'
-  s.version          = '1.0.3'
+  s.version          = '1.0.5'
   s.summary          = '一个可以自定义规则的路由，支持universalLink,一般的路由规则，，还可以处理正常的html回调。'
 
 # This description is used to generate tags and improve search results.
@@ -38,5 +38,5 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'WExpandLibrary'
+  s.dependency 'WExpandLibrary'
 end

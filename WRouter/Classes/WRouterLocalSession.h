@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WFileManager.h"
+#import <WExpandLibrary/WExpandHeader.h>
 
 @interface WRouterLocalSession : NSObject
 
