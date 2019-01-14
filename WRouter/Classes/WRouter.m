@@ -350,7 +350,7 @@ static dispatch_once_t once;
             //创建控制器 并赋予新值
             Class obj = NSClassFromString(entry.className);
             UIViewController *viewCotroller = [obj new];
-            [viewCotroller setObjectWithDict:entry.params];
+            [viewCotroller safeSetWithDict:entry.params];
 
             if (entry.callBackHanler) {
                 entry.callBackHanler(viewCotroller,callBack);
@@ -405,7 +405,7 @@ static dispatch_once_t once;
 
             NSMutableDictionary *totalParams = [NSMutableDictionary dictionaryWithDictionary:entry.params];
             [totalParams addEntriesFromDictionary:params];
-            [viewCotroller setObjectWithDict:totalParams];
+            [viewCotroller safeSetWithDict:totalParams];
 
             //自定义的block回调
             if (entry.callBackHanler) {

@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "AppInfo.h"
 #import "WBasicCell.h"
 #import "WCheckAuthor.h"
 #import "WDataModel.h"
@@ -26,6 +27,7 @@
 #import "WSiderViewController.h"
 #import "WThreadTool.h"
 #import "WTool.h"
+#import "WWelcomPage.h"
 
 FOUNDATION_EXPORT double WExpandLibraryVersionNumber;
 FOUNDATION_EXPORT const unsigned char WExpandLibraryVersionString[];

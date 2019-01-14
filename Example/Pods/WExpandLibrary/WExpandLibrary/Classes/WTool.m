@@ -15,16 +15,6 @@
 
 @implementation WTool
 
-/**
- 自动息屏
-
- @param shut 是否自动息屏， 默认是yes
- */
-+(void)auotShutScreen:(BOOL)shut;
-{
-    [[UIApplication sharedApplication] setIdleTimerDisabled:shut];
-}
-
 #pragma mark - 其他
 /**
  判断系统语言是否为中文
@@ -37,29 +27,14 @@
     NSArray* languages = [defs objectForKey:@"AppleLanguages"];
     NSString* preferredLang = [languages objectAtIndex:0];
 
+
+
     if ([preferredLang isEqualToString:@"zh-Hans"]||[preferredLang isEqualToString:@"zh-Hant"]) {
         return YES;
     }
     return NO;
 }
 
-
-
-/**
- 判断密码是否过于简单
-
- @param pass 要判断的密码
- @return 返回值
- */
-+(BOOL)needChangePass:(NSString *)pass;
-{
-    NSArray *array = @[@"123456",@"111111",@"654321",@"123123",@"222222"];
-    if ([array containsObject:pass]) {
-
-        return YES;
-    }
-    return NO;
-}
 
 #pragma mark - 跳转到系统设置
 
@@ -170,127 +145,64 @@
 
 
 /**
- 判断是否是iphonex
+ 判断ver1 是否大于 ver2
 
- @return 返回判断值
+ @param Ver1 版本1
+ @param Ver2 版本2
+ @return 返回是否需要升级 1:大于 0:等于 -1:小于 -10:其他
  */
-+(BOOL)isiPhoneX;
++(int)compareWithVer1:(NSString *)Ver1 Ver2:(NSString *)Ver2;
 {
-    if (ScreenHeight == 812) {
+    NSArray *array1 = [Ver1 componentsSeparatedByString:@"."];
+    NSArray *array2 = [Ver2 componentsSeparatedByString:@"."];
 
-        return YES;
+    int ver1 = 0;
+    int ver2 = 0;
+
+        //版本1
+    if (array1.count > 3) {
+
+        ver1 = [array1[0] intValue]*1000000 + [array1[1] intValue]*10000 + [array1[2] intValue]*100 + [array1[3] intValue];
+    }
+    else if (array1.count > 2) {
+
+        ver1 = [array1[0] intValue]*1000000 + [array1[1] intValue]*10000 + [array1[2] intValue];
+    }
+    else if (array1.count > 1){
+
+        ver1 = [array1[0] intValue]*1000000 + [array1[1] intValue]*10000;
     }
 
-    return NO;
-}
+        //版本2
+    if (array2.count > 3) {
 
-/**
- 数组排序 降序 4 3 2 1
+        ver2 = [array2[0] intValue]*1000000 + [array2[1] intValue]*10000 + [array2[2] intValue]*100 + [array2[3] intValue];
+    }
+    else if (array2.count > 2) {
 
- @param array 要排序的数组
- @return 排完序的数组
- */
-+ (NSArray *)sortArrayDesc:(NSArray *)array;
-{
-        //对数组进行排序
-    return [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        ver2 = [array2[0] intValue]*1000000 + [array2[1] intValue]*10000 + [array2[2] intValue];
+    }
+    else if (array2.count > 1){
 
-        return [obj2 compare:obj1]; //降序
-
-    }];
-}
-
-/**
- 数组排序 升序 1 2 3 4
-
- @param array 要排序的数组
- @return 排完序的数组
- */
-+ (NSArray *)sortArrayAsc:(NSArray *)array;
-{
-        //对数组进行排序
-    return [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-
-        return [obj1 compare:obj2]; //升序
-
-    }];
-}
-
-
-/**
- 返回导航栏高度
-
- @return 返回高度
- */
-+(NSInteger)getNavbarHeight;
-{
-    float height = 64;
-    if ([WTool isiPhoneX]) {
-
-        height = 88;
+        ver2 = [array2[0] intValue]*1000000 + [array2[1] intValue]*10000;
     }
 
-    if ([WDevice HotSpotIsOpened]) {
+        //比较
+    if (ver1 > ver2) {
 
-        height += 20;
+        return 1;
+    }
+    else if (ver1 == ver2){
+
+        return 0;
+    }
+    else if (ver1 < ver2){
+
+        return -1;
     }
 
-    return height;
-}
-
-/**
- 返回底部高度
-
- @return 返回高度
- */
-+(NSInteger)getBottomHeight;
-{
-    float height = 0;
-    if (isIPHoneX) {
-
-        height = 30;
-    }
-
-    return height;
+    return -10;
 }
 
 
-/**
- 数出字符个数，中文只占一个
-
- @param string 要计算的字符
- @return 返回字符个数
- */
-+(int)countCharNum:(NSString *)string;
-{
-    int count = 0;
-    int count1 =0;
-
-    for (int i =0; i<string.length;i++){
-
-        unichar c = [string characterAtIndex:i];
-        if (c >=0x4E00 && c <=0x9FA5){
-
-            count ++;
-        }else{
-
-            count1 ++;
-        }
-    }
-
-    return count+count1;
-}
-
-
-///**
-// 创建静态字符串
-//
-// @param string 静态字符串
-// @return 返回静态字符串
-// */
-//+(NSString *)createStaticString:(NSString *)string;
-//{
-//    static NSString *strings = string;
-//    return strings;
-//}
 @end

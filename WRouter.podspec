@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WRouter'
-  s.version          = '1.0.5'
-  s.summary          = '一个可以自定义规则的路由，支持universalLink,一般的路由规则，，还可以处理正常的html回调。'
+  s.version          = '1.0.6'
+  s.summary          = '一个可以自定义规则的路由，支持universalLink，一般的路由规则，还可以处理正常的html回调。'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+    一个可以自定义规则的路由，支持universalLink,一般的路由规则，还可以处理正常的html回调。
                        DESC
 
   s.homepage         = 'https://github.com/zzttwzq/WRouter'
